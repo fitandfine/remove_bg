@@ -1,0 +1,5 @@
+Flask>=2.0.0
+rembg>=2.0.0
+pillow>=9.0.0
+uuid
+onnxruntime>=1.15.0

@@ -1,0 +1,5 @@
+remove/
+__pycache__/
+static/outputs/
+*.pyc
+.env

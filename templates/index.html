@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Remover</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1 class="title">Remove Background</h1>
+    <p class="subtitle">Upload an image or use your camera.</p>
+
+    <!-- Upload Section -->
+    <div class="upload-box">
+
+        <!-- Preview of selected image or camera capture -->
+        <img id="previewImg" class="preview hidden" />
+
+        <!-- File Picker -->
+        <label class="btn secondary full" for="imageInput">Choose Image</label>
+        <input id="imageInput" type="file" accept="image/*">
+
+        <!-- CAMERA BUTTON -->
+        <button id="cameraBtn" class="btn secondary full">Use Camera</button>
+
+        <!-- CAMERA STREAM -->
+        <video id="cameraStream" autoplay playsinline class="camera hidden"></video>
+        <button id="captureBtn" class="btn primary hidden">Capture Photo</button>
+
+        <!-- Hidden canvas used to convert camera frame into an image -->
+        <canvas id="cameraCanvas" class="hidden"></canvas>
+
+        <!-- PROCESS BUTTON -->
+        <button id="processBtn" class="btn primary hidden">Remove Background</button>
+
+        <!-- LOADING INDICATOR -->
+        <div id="loader" class="loader hidden"></div>
+    </div>
+
+    <!-- Result Section -->
+    <div id="resultBox" class="result-box hidden">
+        <h2>Result</h2>
+        <img id="resultImg" class="result-img" />
+
+        <div class="action-buttons">
+            <a id="viewLink" class="btn secondary" target="_blank">View</a>
+            <a id="downloadLink" class="btn primary">Download</a>
+        </div>
+    </div>
+
+</div>
+
+<script src="/static/js/main.js"></script>
+</body>
+</html>
