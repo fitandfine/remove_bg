@@ -72,7 +72,7 @@ I wanted a hands-on project where I could:
 * Build a UI that feels smooth and intuitive
 * Produce something that’s easy to maintain and extend
 
-This also fits perfectly into showing full-stack ability—from backend logic to frontend responsiveness.
+
 
 ---
 
