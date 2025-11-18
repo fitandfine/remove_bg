@@ -2,7 +2,7 @@
 
 This project is a simple Flask-based web app I built to remove backgrounds from images using the **rembg** library. It’s lightweight, easy to run, and has a clean, responsive interface that works smoothly on both mobile and desktop screens.
 
-The whole point of this project was to create something practical that also shows my ability to put together a full end-to-end app using Python, Flask, HTML/CSS/JS, and a bit of UI thinking.
+The whole point of this project was to create something practical that develops ability to put together a full end-to-end app using Python, Flask, HTML/CSS/JS, and a bit of UI thinking.
 
 ---
 
@@ -13,6 +13,11 @@ The whole point of this project was to create something practical that also show
 * Shows you a preview of the output right in the browser
 * Lets you download the processed image with one click
 * Everything happens in your browser session—no external storage
+
+---
+### 🔧 How This Application Works (Technical Overview)
+
+This project combines **Flask**, **rembg**, and **Pillow (PIL)** to create a simple background-removal web application. Flask acts as the web framework responsible for routing, request handling, validation, and returning JSON or rendered templates. When a user uploads an image, Flask first verifies the file’s extension and size, then reads the raw bytes. These bytes are passed through **Pillow**, which performs a lightweight integrity check to ensure the file is a real image before any processing occurs. Once validated, the bytes are fed into **rembg**, a powerful machine-learning-based background removal engine that outputs a clean PNG with a transparent alpha channel. The processed image is then written to the `static/outputs` directory using a secure, UUID-based filename to avoid collisions. Flask then exposes three key endpoints: one to **view** the processed transparent PNG in the browser, one to **download** it as an attachment, and one to **serve** the raw bytes directly (useful for UI previews). Every function in the backend is documented, error-handled, and validation-checked, ensuring that corrupted files, oversized uploads, or processing failures never crash the app. Together, these libraries form a smooth pipeline: Flask handles the delivery, Pillow protects the input, rembg performs the heavy lifting, and the frontend consumes the output seamlessly.
 
 ---
 
